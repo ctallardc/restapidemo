@@ -20,6 +20,10 @@ import store.views
 import store.api_views
 
 urlpatterns = [
+     path('api/v1/products/new', store.api_views.ProductCreate.as_view()),
     path('api/v1/products/', store.api_views.ProductList.as_view()),
+    path('api/v1/products/<int:id>/',
+        store.api_views.ProductRetrieveUpdateDestroy.as_view()
+    ),
     path('admin/', admin.site.urls),
 ]
